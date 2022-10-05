@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }
+
+  has_many :posts, dependent: :destroy
 end

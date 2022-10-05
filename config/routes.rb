@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       get "me"
     end
   end
+
+  resources :posts, only: [:show, :index, :create]
 end
